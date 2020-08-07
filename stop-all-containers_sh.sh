@@ -1,0 +1,23 @@
+echo "****************************"
+echo "stopping all containers"
+echo "****************************"
+docker container ls -q | xargs docker container stop
+echo "****************************"
+echo "stopped all containers"
+echo "****************************"
+echo "cleaning all the containers, removing them from your laptop"
+echo "****************************"
+docker ps -a -q | xargs -n1 docker rm
+echo "****************************"
+echo "all the containers removed"
+echo "****************************"
+echo "****************************"
+echo "****************************"
+echo "****************************"
+echo "removing all the volumes from your laptop"
+echo "****************************"
+docker volume ls -q | xargs -n1 docker volume rm
+echo "****************************"
+echo "removed all the volumes from your laptop"
+echo "****************************"
+echo "GO ENJOY RUNNING NEW CONTAINERS. HAVE A NICE AND SMOOTH DAY AHEAD......"

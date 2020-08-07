@@ -1,0 +1,10 @@
+Ashishs-MBP:.ssh aadeshpa@us.ibm.com$ cat prepare_and_copy_integration_test_case_R4_0_mbe-tests-container.sh
+echo "copying integration test aggregator from integration test distribution to ssh folder"
+cp /Users/aadeshpa@us.ibm.com/git/component-and-integration-tests/integration-test-distribution/target/integration-test-distribution-4.0.0-SNAPSHOT.zip ~/.ssh/war_files/
+cp /Users/aadeshpa@us.ibm.com/git/component-and-integration-tests/health-diagnostic-distribution/target/health_diagnostic-4.0.0-SNAPSHOT.zip ~/.ssh/war_files/
+echo "copy successfull"
+docker cp ~/.ssh/war_files/integration-test-distribution-4.0.0-SNAPSHOT.zip mbe-tests:/
+chmod 777 ~/.ssh/prepare-integration-test-r4-container-mbe-tests-container.sh
+docker cp ~/.ssh/prepare-integration-test-r4-container-mbe-tests-container.sh mbe-tests:/
+docker cp ~/.ssh/war_files/health_diagnostic-4.0.0-SNAPSHOT.zip mbe-tests:/
+echo "copied the integration-test-distribution to my mbe-tests container successfully . docker exec -it mbe-tests bash"Ashishs-MBP:.ssh aadeshpa@us.ibm.com$ 
